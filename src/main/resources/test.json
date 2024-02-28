@@ -1,0 +1,15 @@
+{
+  "data": {
+    "event": {
+      "createdDate": "2024-02-27T18:18:04.756Z",
+      "replayId": 21,
+      "type": "updated"
+    },
+    "sobject": {
+      "Cost__c": 70,
+      "Currency__c": "USD",
+      "Id": "a1ODv000004nNYeMAM"
+    }
+  },
+  "channel": "/topic/ActivityCostUpdate"
+}
