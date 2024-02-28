@@ -21,7 +21,7 @@ This project is a command-line interface (CLI) tool developed with Spring Boot a
 
    ```bash
    git clone https://your-repository-url.git
-   cd KinesisTerminalTool```
+   cd KinesisTerminalTool
 
 2. **Build the Application**
     ```
