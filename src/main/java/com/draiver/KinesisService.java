@@ -21,21 +21,13 @@ public class KinesisService {
     private AmazonKinesis kinesisClient;
 
     public void sendEvent(String message, String streamName) {
-        /*
-        PutRecordRequest request = PutRecordRequest.builder()
-                .streamName(streamName)
-                .data(SdkBytes.fromByteBuffer(ByteBuffer.wrap(message.getBytes())))
-                .partitionKey("partitionKey")
-                .build();
-
-         */
         var output = new PutRecordRequest();
         output.setStreamName(streamName);
         output.setPartitionKey("partitionKey");
         output.withData(ByteBuffer.wrap(message.getBytes()));
 
         PutRecordResult response = kinesisClient.putRecord(output);
-        logger.info("Mensaje enviado al tópico '" + streamName + "' con ID de secuencia: " + response.getSequenceNumber());
+        logger.info("Message send to topic '" + streamName + "' sequence ID : " + response.getSequenceNumber());
     }
 }
 
