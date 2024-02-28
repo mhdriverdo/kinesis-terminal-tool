@@ -11,7 +11,7 @@ This project is a command-line interface (CLI) tool developed with Spring Boot a
 
 ## Prerequisites
 
-- Java JDK 11 or later.
+- Java JDK 17 or later.
 - Gradle (if building from source).
 - An AWS account and AWS CLI configured with access to Kinesis.
 
