@@ -42,6 +42,11 @@ send --file <fileName> --topic <topicName>
 ```
 Replace <fileName> with the name of the file in the resources folder you wish to send, and <topicName> with the name of your Kinesis topic.
 
+### Listen Kinesis Topic
+```bash
+listen --topic <topicName>
+```
+
 ### Display Information
 ```bash
 info

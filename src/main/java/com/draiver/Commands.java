@@ -13,8 +13,6 @@ import java.util.Arrays;
 @ShellComponent
 public class Commands {
 
-    private static final Logger logger = LoggerFactory.getLogger(Commands.class);
-
     private final KinesisService kinesisService;
 
     public Commands(KinesisService kinesisService) {
@@ -26,18 +24,26 @@ public class Commands {
                      @ShellOption({"-t", "--topic"}) String topic) {
         try {
             String content = new String(Files.readAllBytes(Paths.get(fileName)));
-            logger.info("Sending contents file name '" + fileName + "' to '" + topic + "'.");
+            System.out.println("Sending contents file name '" + fileName + "' to '" + topic + "'.");
             kinesisService.sendEvent(content, topic);
         } catch (Exception e) {
-            logger.error("Error while sending message: " + e.getMessage());
-            logger.error("Stack:" + Arrays.toString(e.getStackTrace()));
+            System.out.println("Error while sending message: " + e.getMessage());
+            System.out.println("Stack:" + Arrays.toString(e.getStackTrace()));
         }
     }
 
     @ShellMethod("Show commands info.")
     public void info() {
-        logger.info("Usage:");
-        logger.info("  send --file <fileName> --topic <topic> - Send contents file to a specific topic.");
-        logger.info("  info - Show commands info.");
+        System.out.println("Usage:");
+        System.out.println("  send --file <fileName> --topic <topic> - Send contents file to a specific topic.");
+        System.out.println("  listen --topic <topic> - Subscribe and listen to a topic.");
+        System.out.println("  info - Show commands info.");
     }
+
+    @ShellMethod("Subscribe and Listen to a specific topic.")
+    public void listen(@ShellOption({"-t", "--topic"}) String topicName) {
+        System.out.println("Listening topic (stream): " + topicName);
+        new Thread(() -> kinesisService.listenToKinesisStream(topicName)).start();
+    }
+
 }

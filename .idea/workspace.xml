@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dee6289-94ae-4478-82f0-cc3bd7bb831a" name="Changes" comment="update readme" />
+    <list default="true" id="7dee6289-94ae-4478-82f0-cc3bd7bb831a" name="Changes" comment="Translate message to English">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/draiver/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draiver/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/draiver/KinesisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draiver/KinesisService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,35 +67,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build kinesisTerminalTool.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.kinesisTerminalTool [bootJar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.kinesisTerminalTool [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.kinesisTerminalTool [compileJava].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.kinesisTerminalTool [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.KinesisTerminalToolApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/martinhuber/Code/draiver/integration/kinesisTerminalTool/build.gradle&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.jsOptions&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build kinesisTerminalTool.executor": "Run",
+    "Gradle.kinesisTerminalTool [bootJar].executor": "Run",
+    "Gradle.kinesisTerminalTool [build].executor": "Run",
+    "Gradle.kinesisTerminalTool [compileJava].executor": "Run",
+    "Gradle.kinesisTerminalTool [dependencies].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.KinesisTerminalToolApplication.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/martinhuber/Code/draiver/integration/kinesisTerminalTool/build.gradle",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -190,7 +194,7 @@
       <method v="2" />
     </configuration>
     <configuration name="KinesisTerminalToolApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="kinesisTerminalTool.main" />
+      <module name="kinesis-terminal-tool.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.draiver.KinesisTerminalToolApplication" />
       <extension name="coverage">
         <pattern>
@@ -206,8 +210,8 @@
       <list>
         <item itemvalue="Spring Boot.KinesisTerminalToolApplication" />
         <item itemvalue="Gradle.kinesisTerminalTool [bootJar]" />
-        <item itemvalue="Gradle.kinesisTerminalTool [dependencies]" />
         <item itemvalue="Gradle.kinesisTerminalTool [build]" />
+        <item itemvalue="Gradle.kinesisTerminalTool [dependencies]" />
         <item itemvalue="Gradle.kinesisTerminalTool [compileJava]" />
       </list>
     </recent_temporary>
@@ -228,6 +232,10 @@
       <option name="presentableId" value="Default" />
       <updated>1709066286305</updated>
       <workItem from="1709066287337" duration="9955000" />
+      <workItem from="1709144659994" duration="218000" />
+      <workItem from="1709145724973" duration="9000" />
+      <workItem from="1709243686203" duration="700000" />
+      <workItem from="1709294249568" duration="3363000" />
     </task>
     <task id="LOCAL-00001" summary="Kinesis tool">
       <option name="closed" value="true" />
@@ -237,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709128002745</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Translate message to English">
+      <option name="closed" value="true" />
+      <created>1709144837546</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709144837546</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,28 +262,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Kinesis tool" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/draiver/Commands.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/draiver/KinesisService.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/draiver/Commands.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Translate message to English" />
+    <option name="LAST_COMMIT_MESSAGE" value="Translate message to English" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

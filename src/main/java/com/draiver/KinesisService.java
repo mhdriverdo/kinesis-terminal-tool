@@ -1,21 +1,18 @@
 package com.draiver;
 
-import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.services.kinesis.AmazonKinesis;
-import com.amazonaws.services.kinesis.model.PutRecordRequest;
-import com.amazonaws.services.kinesis.model.PutRecordResult;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.amazonaws.services.kinesis.model.*;
+import com.amazonaws.services.kinesis.model.Record;
 import org.springframework.beans.factory.annotation.Autowired;
-import software.amazon.awssdk.core.SdkBytes;
-import software.amazon.awssdk.regions.Region;
 import org.springframework.stereotype.Service;
+import software.amazon.awssdk.services.kinesis.model.KinesisException;
 
 import java.nio.ByteBuffer;
+import java.util.Arrays;
+import java.util.List;
+
 @Service
 public class KinesisService {
-
-    private static final Logger logger = LoggerFactory.getLogger(Commands.class);
 
     @Autowired
     private AmazonKinesis kinesisClient;
@@ -27,7 +24,45 @@ public class KinesisService {
         output.withData(ByteBuffer.wrap(message.getBytes()));
 
         PutRecordResult response = kinesisClient.putRecord(output);
-        logger.info("Message send to topic '" + streamName + "' sequence ID : " + response.getSequenceNumber());
+        System.out.println("Message send to topic '" + streamName + "' sequence ID : " + response.getSequenceNumber());
     }
+
+    public void listenToKinesisStream(String streamName) {
+        try {
+            String shardIterator;
+            String lastShardId = null;
+
+            DescribeStreamRequest describeStreamRequest = new DescribeStreamRequest().withStreamName(streamName);
+
+            List<Shard> shards = kinesisClient.describeStream(describeStreamRequest).getStreamDescription().getShards();
+
+            for (Shard shard : shards) {
+                lastShardId = shard.getShardId();
+            }
+            GetShardIteratorRequest getShardIteratorRequest = new GetShardIteratorRequest()
+                    .withStreamName(streamName)
+                    .withShardId(lastShardId)
+                    .withShardIteratorType(ShardIteratorType.TRIM_HORIZON);
+            shardIterator = kinesisClient.getShardIterator(getShardIteratorRequest).getShardIterator();
+
+            List<Record> records;
+            while (true) {
+                GetRecordsRequest getRecordsRequest = new GetRecordsRequest()
+                        .withShardIterator(shardIterator);
+                GetRecordsResult result = kinesisClient.getRecords(getRecordsRequest);
+
+                records = result.getRecords();
+                for (Record record : records) {
+                    System.out.println("Record: " + new String(record.getData().array()));
+                }
+
+                shardIterator = result.getNextShardIterator();
+            }
+        } catch (KinesisException e) {
+            System.out.println("Error while sending message: " + e.getMessage());
+            System.out.println("Stack:" + Arrays.toString(e.getStackTrace()));
+        }
+    }
+
 }
 
